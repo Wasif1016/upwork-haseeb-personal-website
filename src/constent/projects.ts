@@ -107,7 +107,7 @@ export const heroProjects: IHeroProjects[] = [
         category: "Education",
         logo: "/logos/shoelite.webp",
         projectImages: [
-            {
+            { 
                 url: "https://shoelite.vercel.app",
                 image: "/projects/shoelite.webp",
             },
