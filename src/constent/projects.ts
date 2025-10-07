@@ -101,33 +101,33 @@ export const heroProjects: IHeroProjects[] = [
     //         }
     //     ]
     // },
-    {
-        title: "Shoelite",
-        description: "Shoelite is an online website designed to help young entrepreneurs learn eCommerce, trading, and financial.",
-        category: "Education",
-        logo: "/logos/enzig.webp",
-        projectImages: [
-            {
-                url: "https://shoelite.club",
-                image: "/projects/shoelite.webp",
-            },
-        ],
-        techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "GSAP", "Brevo", "Upwork"],
-        moreInfo: [
-            `<p>Sho is a entrepreneur and he reached out after seeing my past work, and we quickly clicked on the vision for <span class="lg:font-semibold font-medium tracking-wide">Shoelite</span>. I helped him turn his ideas into a smooth, high-performing website that reflects his brand and mission perfectly. This website helped him to get <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[0.8vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">100+ students</span> in just 2 months.</p>`
-        ],
-        testimonialColor: "#5B4533",
-        testimonial: [
-            {
-                name: "Sho",
-                role: "Founder of Shoelite",
-                feedback: "Man, I can't thank Haseeb enough! 😊 When I first reached out, I had this vision but wasn't sure how to make it happen. He not only got it right away but made it even better than I imagined. The site's been crushing it, we got over 100 students in just 2 months! That's crazy good ROI right there.",
-                rating: 5,
-                image: "/avator/sho.jpg",
-                link: "https://www.instagram.com/sho.tradez/?igsh=MXFqbzE5a3JzaDZyeQ%3D%3D#",
-            }
-        ]
-    },
+    // {
+    //     title: "Shoelite",
+    //     description: "Shoelite is an online website designed to help young entrepreneurs learn eCommerce, trading, and financial.",
+    //     category: "Education",
+    //     logo: "/logos/enzig.webp",
+    //     projectImages: [
+    //         {
+    //             url: "https://shoelite.club",
+    //             image: "/projects/shoelite.webp",
+    //         },
+    //     ],
+    //     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "GSAP", "Brevo", "Upwork"],
+    //     moreInfo: [
+    //         `<p>Sho is a entrepreneur and he reached out after seeing my past work, and we quickly clicked on the vision for <span class="lg:font-semibold font-medium tracking-wide">Shoelite</span>. I helped him turn his ideas into a smooth, high-performing website that reflects his brand and mission perfectly. This website helped him to get <span class="lg:font-bold font-semibold lg:px-[0.3vw] px-[2vw] py-[0.8vw] lg:py-[0.1vw] rounded bg-primary text-primary-foreground tracking-wide">100+ students</span> in just 2 months.</p>`
+    //     ],
+    //     testimonialColor: "#5B4533",
+    //     testimonial: [
+    //         {
+    //             name: "Sho",
+    //             role: "Founder of Shoelite",
+    //             feedback: "Man, I can't thank Haseeb enough! 😊 When I first reached out, I had this vision but wasn't sure how to make it happen. He not only got it right away but made it even better than I imagined. The site's been crushing it, we got over 100 students in just 2 months! That's crazy good ROI right there.",
+    //             rating: 5,
+    //             image: "/avator/sho.jpg",
+    //             link: "https://www.instagram.com/sho.tradez/?igsh=MXFqbzE5a3JzaDZyeQ%3D%3D#",
+    //         }
+    //     ]
+    // },
     {
         title: "Rateourjob",
         description: "A modern AI-powered review platform helping businesses build trust and get valuable customer feedback — all on autopilot.",
