@@ -18,12 +18,11 @@ function Navbar() {
                 {/* Logo */}
                 <Link href="/" className='flex items-center gap-[1.5vw] lg:gap-[1vw]'>
                     <Image
-                        src="/haseeb-ahmed-raza-khan.webp"
+                        src="/haseeb-ahmed-raza-khan.png"
                         alt="Haseeb Ahmed web developer Logo"
-                        width={600}
-                        height={600}
+                        width={300}
+                        height={300}
                         priority
-                        quality={100}
                         placeholder="blur"
                         blurDataURL="/haseeb-ahmed-raza-khan.webp"
                         className='rounded-full object-cover object-top h-[12vw] md:h-[5vw] lg:h-[3.8vw] w-[12vw] md:w-[5vw] lg:w-[3.8vw] cursor-pointer'
