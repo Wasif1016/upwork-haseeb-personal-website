@@ -91,6 +91,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  
   openGraph: {
     title: "Haseeb Ahmed Raza Khan – Full Stack Developer",
     description:
