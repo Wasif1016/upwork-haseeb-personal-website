@@ -6,7 +6,7 @@ const getBaseUrl = () => {
   if (process.env.NODE_ENV === "development") {
     return "http://localhost:3000";
   } else {
-    return "https://haseebkhan.online";
+    return "https://www.haseebahmedrazakhan.online";
   }
 };
 

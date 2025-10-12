@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://haseebkhan.online/sitemap.xml 
+Sitemap: https://www.haseebahmedrazakhan.online/sitemap.xml 

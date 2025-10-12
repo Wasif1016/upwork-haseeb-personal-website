@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         title: "Contact | Haseeb Ahmed Raza Khan",
         description:
             "Reach out to Haseeb Ahmed Raza Khan for project inquiries, collaborations, or web development services. Let's bring your ideas to life.",
-        url: "https://haseebkhan.online/contact",
+        url: "https://www.haseebahmedrazakhan.online/contact",
         siteName: "Haseeb Ahmed Raza Khan Portfolio",
         images: [
             {
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     },
-    metadataBase: new URL("https://haseebkhan.online"),
+    metadataBase: new URL("https://www.haseebahmedrazakhan.online"),
 };
 
 

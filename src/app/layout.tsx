@@ -9,8 +9,8 @@ import Navbar from "@/components/layout.tsx/navbar";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import AnnouncementStrip from "@/components/AnnouncementStrip";
-import Chatbot from "@/components/chatbot";
+// import AnnouncementStrip from "@/components/AnnouncementStrip";
+// import Chatbot from "@/components/chatbot";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     "Haseeb Ahamed Programmer",
   ],
   authors: [
-    { name: "Haseeb Ahmed Raza Khan", url: "https://haseebkhan.online" },
+    { name: "Haseeb Ahmed Raza Khan", url: "https://www.haseebahmedrazakhan.online" },
   ],
   creator: "Haseeb Ahmed Raza Khan",
   publisher: "Haseeb Ahmed Raza Khan",
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://haseebkhan.online"),
+  metadataBase: new URL("https://www.haseebahmedrazakhan.online"),
   alternates: {
     canonical: "/",
   },
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     title: "Haseeb Ahmed Raza Khan – Full Stack Developer",
     description:
       "Haseeb Ahmed Raza Khan is a full stack developer. He has helped many companies to build their websites and applications.",
-    url: "https://haseebkhan.online",
+    url: "https://www.haseebahmedrazakhan.online",
     siteName: "Haseeb Ahmed Raza Khan Portfolio",
     images: [
       {
