@@ -6,16 +6,32 @@ import { supabaseClient } from '@/lib/supabase';
 import { OpenAIEmbeddings } from '@langchain/openai';
 
 /* ---------- Vector store setup ------------------------------------ */
-const embeddings = new OpenAIEmbeddings({
-    model: 'text-embedding-3-small',                     
-    apiKey: process.env.OPENAI_API_KEY,
-});
+let vectorStoreInstance: SupabaseVectorStore | null = null;
 
-const vectorStore = new SupabaseVectorStore(embeddings, {
-    client: supabaseClient,
-    tableName: 'documents',
-    queryName: 'match_documents',
-});
+function getVectorStore() {
+    if (vectorStoreInstance) {
+        return vectorStoreInstance;
+    }
+    
+    // Check if we have required env vars, if not, throw a helpful error at runtime
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey) {
+        throw new Error('OPENAI_API_KEY is required for database search functionality');
+    }
+    
+    const embeddings = new OpenAIEmbeddings({
+        model: 'text-embedding-3-small',                     
+        apiKey: apiKey,
+    });
+
+    vectorStoreInstance = new SupabaseVectorStore(embeddings, {
+        client: supabaseClient,
+        tableName: 'documents',
+        queryName: 'match_documents',
+    });
+    
+    return vectorStoreInstance;
+}
 
 // Enhanced search query processing
 function enhanceSearchQuery(query: string): string {
@@ -86,6 +102,7 @@ export const databaseTool = tool({
             console.log("Number of documents available:", docCount);
 
             // Try similarity search with enhanced query
+            const vectorStore = getVectorStore();
             const similarDocs = await vectorStore.similaritySearchWithScore(enhancedQuery, 8);
             console.log("Number of similar documents found for query:", similarDocs.length, enhancedQuery);
             
@@ -134,7 +151,7 @@ export const databaseTool = tool({
                     if (!hasProjectContent) {
                         console.log("No actual project content found, trying broader search...");
                         // Try a broader search for project content
-                        const broaderResults = await vectorStore.similaritySearchWithScore("Figmenta Assess GPT Rateourjob Enzig websites", 5);
+                        const broaderResults = await getVectorStore().similaritySearchWithScore("Figmenta Assess GPT Rateourjob Enzig websites", 5);
                         const projectResults = broaderResults
                             .filter(([doc, score]) => doc.metadata.category === 'projects')
                             .map(([doc, score]) => ({
@@ -164,7 +181,7 @@ export const databaseTool = tool({
 
             // Fallback to retriever if no good results
             console.log("Falling back to retriever search...");
-            const retriever = vectorStore.asRetriever({
+            const retriever = getVectorStore().asRetriever({
                 k: 3,
                 searchType: "similarity",
             });
