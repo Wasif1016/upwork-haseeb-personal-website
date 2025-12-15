@@ -13,34 +13,9 @@ function SocialMediaIcon() {
 
     const socialMedia = [
         {
-            name: "Github",
-            url: Github,
-            icon: "/icon/github.svg"
-        },
-        {
-            name: "Linkedin",
-            url: LinkedinIn,
-            icon: "/icon/linkedin.svg"
-        },
-        {
-            name: "X",
-            url: X,
-            icon: "/icon/x.svg"
-        },
-        {
             name: "Upwork",
             url: Upwork,
             icon: "/icon/upwork.svg"
-        },
-        {
-            name: "Instagram",
-            url: Instagram,
-            icon: "/icon/instagram.svg"
-        },
-        {
-            name: "Whatsapp",
-            url: Whatsapp,
-            icon: "/icon/whatsapp.svg"
         },
     ]
 

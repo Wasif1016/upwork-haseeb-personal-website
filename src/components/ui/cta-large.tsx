@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Form from "./form";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -9,8 +9,8 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CTALarge() {
-  const [isFormOpen, setIsFormOpen] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const upworkUrl = "https://www.upwork.com/freelancers/~01416f5dd867bc4a69";
   const sectionRef = useRef<HTMLDivElement>(null);
   const textContainerRef = useRef<HTMLDivElement>(null);
 
@@ -90,34 +90,29 @@ export default function CTALarge() {
     };
   }, [imagesLoaded]); // Re-run when images are loaded
 
-  const handleFormOpen = () => {
-    setIsFormOpen(!isFormOpen);
-  };
-
   return (
-    <>
-      <section 
-        ref={sectionRef}
-        className="main-section flex w-full h-screen items-center overflow-hidden"
+    <section 
+      ref={sectionRef}
+      className="main-section flex w-full h-screen items-center overflow-hidden"
+    >
+      <div
+        ref={textContainerRef}
+        className="text-container flex gap-[2vw] will-change-transform"
+        style={{ transform: "translate3d(0, 0, 0)" }}
       >
-        <div
-          ref={textContainerRef}
-          className="text-container flex gap-[2vw] will-change-transform"
-          style={{ transform: "translate3d(0, 0, 0)" }}
-        >
-          <h3 className="text whitespace-nowrap uppercase font-semibold text-[18vw] md:text-[14.5vw] lg:text-[12vw] tracking-tighter leading-none px-[8vw]">
-            Not just websites 🥗{" "}
-            <span
-              onClick={handleFormOpen}
-              className="cursor-pointer lowercase [-webkit-text-stroke:1px_rgb(171,255,79)] hover:text-primary/[0.02] text-transparent"
-            >
-              build brand
-              <span className="absolute h-[0.05vw] w-full left-0 top-[88%] bg-foreground/10"></span>
-            </span>
-          </h3>
-        </div>
-      </section>
-      {isFormOpen && <Form handleFormOpen={handleFormOpen} />}
-    </>
+        <h3 className="text whitespace-nowrap uppercase font-semibold text-[18vw] md:text-[14.5vw] lg:text-[12vw] tracking-tighter leading-none px-[8vw]">
+          Not just websites 🥗{" "}
+          <Link
+            href={upworkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer lowercase [-webkit-text-stroke:1px_rgb(171,255,79)] hover:text-primary/[0.02] text-transparent"
+          >
+            build brand
+            <span className="absolute h-[0.05vw] w-full left-0 top-[88%] bg-foreground/10"></span>
+          </Link>
+        </h3>
+      </div>
+    </section>
   );
 }

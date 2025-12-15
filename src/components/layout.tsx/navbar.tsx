@@ -1,15 +1,9 @@
 "use client"
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
-import Form from '../ui/form'
 
 function Navbar() {
-    const [isFormOpen, setIsFormOpen] = useState(false)
-
-    const handleFormOpen = () => {
-        setIsFormOpen(!isFormOpen)
-    }
+    const upworkUrl = "https://www.upwork.com/freelancers/~01416f5dd867bc4a69"
 
     return (
         <header className='section w-full'>
@@ -45,18 +39,17 @@ function Navbar() {
                     >
                         Projects
                     </Link>
-                    <button
-                        onClick={handleFormOpen}
+                    <Link
+                        href={upworkUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="cursor-pointer relative flex items-center text-[5vw] md:text-[3vw] lg:text-[1.11vw] font-medium h-[12vw] md:h-[4vw] lg:h-[3.56vw] px-[4vw] lg:px-[2vw] border border-foreground/40 rounded-full leading-none"
                     >
                         Contact
-                    </button>
+                    </Link>
                 </div>
 
             </nav>
-            {isFormOpen && (
-                <Form handleFormOpen={handleFormOpen} />
-            )}
         </header>
     )
 }
